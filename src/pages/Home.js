@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <div>
+
       <Nav />
       <Banner />
       <Row
@@ -23,6 +24,7 @@ function Home() {
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
       <Footer />
+      
     </div>
   );
 }
