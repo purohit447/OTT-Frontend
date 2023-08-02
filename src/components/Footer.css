@@ -1,0 +1,22 @@
+/* CSS for Footer component */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  background-color: #111;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer__text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Add this style to push the footer to the bottom */
+body > div {
+  flex-grow: 1;
+}

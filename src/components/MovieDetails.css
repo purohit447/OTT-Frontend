@@ -1,0 +1,76 @@
+.movie__container {
+  color: white;
+  object-fit: contain;
+  height: 448px;
+}
+
+.movie__contents {
+  margin-left: 30px;
+  padding-top: 140px;
+  height: 190px;
+}
+
+.movie__title {
+  padding-top: 220px;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 5px;
+  padding-bottom: 0.3rem;
+}
+
+.movie__buttons {
+  margin-top: 30px;
+}
+
+.movie__button {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 0.2vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-right: 1rem;
+  background-color: rgba(51, 51, 51, 0.5);
+}
+
+.movie__button:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  transition: all 0.2s;
+}
+
+.movie__description {
+  width: 45rem;
+  line-height: 2rem;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  max-width: 700px;
+}
+
+.runtime__indicator {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #999;
+  padding-top: 1rem;
+}
+
+.similar__suggestion {
+  padding-top: 20px;
+  /* height: 500px; */
+}
+
+.movie--fadeBottom {
+  height: 7.4rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
+  );
+}

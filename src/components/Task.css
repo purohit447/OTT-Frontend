@@ -1,0 +1,35 @@
+/* TaskComponent.css */
+.task-component {
+  position: absolute;
+  top: 50px; /* Adjust this value to position the component correctly below the navbar */
+  right: 0; /* Adjust this value to position the component correctly from the right side */
+  background-color: #222;
+  border: 1px solid #222;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  z-index: 10;
+}
+
+.task-section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  color: #d9d9d9;
+}
+
+li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #d9d9d9;
+}
