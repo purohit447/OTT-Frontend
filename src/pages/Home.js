@@ -16,13 +16,13 @@ function Home() {
         fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow
       />
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
-      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
-      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-      <Row title="Horror Movies" fetchUrl={requests.fetchComedyMovies} />
-      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      <Row title="Top Rated" fetchUrl={"toprated"} isLargeRow />
+      <Row title="Comedy" fetchUrl={"comedy"} isLargeRow />
+      <Row title="Horror Movies" fetchUrl={"horror"} isLargeRow />
+      <Row title="Romantic Touch" fetchUrl={"romance"} isLargeRow/>
+      <Row title="Thriller" fetchUrl={"thriller"}isLargeRow />
+      <Row title="Drama" fetchUrl={"drama"} isLargeRow/>
+      <Row title="Mystery" fetchUrl={"mystery"} isLargeRow/>
       <Footer />
       
     </div>
