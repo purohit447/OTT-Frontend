@@ -57,7 +57,7 @@ const MovieDetails = () => {
           Runtime - {`${movie?.runtime}`} minutes
         </h1>
         <div className="similar__suggestion">
-          <Row title="Similar Movies" fetchUrl={requests.fetchTrending} />
+          <Row title="Similar Movies" fetchUrl={requests.fetchTrending} isLargeRow />
         </div>
         <Footer />
       </div>

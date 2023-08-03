@@ -14,7 +14,13 @@ function Row({ title, fetchUrl, isLargeRow }) {
   }, [fetchUrl]);
 
   const fetchData = async () => {
-    const response = await Axios.get("http://127.0.0.1:8001/movies/api/data/");
+    let url = "http://127.0.0.1:8001/movies/api/data/";
+    if(fetchUrl.length <= 8){
+
+      url = url + fetchUrl + "/";
+    }
+    console.log(" Complete Url is " + fetchUrl);
+    const response = await Axios.get(url);
     console.log(response.data);
     setMovies(response.data);
   }
