@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import UserProfile from "../components/UserProfile";
 import Footer from "../components/Footer";
 
+
 function User() {
   return (
     <div>

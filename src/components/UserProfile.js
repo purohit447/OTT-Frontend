@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import "./UserProfile.css";
+import { Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 const UserProfile = () => {
-
-  const [User , setUser] = useContext(UserContext)
+  const [User, setUser] = useContext(UserContext);
 
   const user = {
     name: "John Doe",
@@ -23,7 +23,9 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="user-profile">
+    <>
+    {
+      (User === null) ? (<Navigate to="/" />) : (<div className="user-profile">
       <img src={user.image} alt={user.name} className="user-profile-image" />
       <h2 className="user__name">{User.email}</h2>
       <p>Points: {user.points}</p>
@@ -39,7 +41,10 @@ const UserProfile = () => {
           </ul>
         </div>
       )}
-    </div>
+    </div>)
+    }
+      
+    </>
   );
 };
 
