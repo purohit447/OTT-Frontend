@@ -7,7 +7,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import UserContext from "../context/UserContext";
 import LoadingContext from "../context/LoadingContext";
 import { useNavigate } from "react-router-dom";
-import  Axios  from "axios";
+import axios from "../axiosToServer";
 
 firebase.initializeApp(firebaseConfig);
 const auth = getAuth();
@@ -17,7 +17,7 @@ const Signup = () => {
   const [repass, setRepass] = useState("");
   const [user, setUser] = useContext(UserContext);
   const [loading, setLoading] = useContext(LoadingContext);
-  const [name , setName] = useState(""); 
+  const [name, setName] = useState("");
   const navigate = useNavigate();
   const handleEnter = (event) => {
     if (event.key === "Enter") {
@@ -47,11 +47,11 @@ const Signup = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        
+
         setUser({
           email: user.email,
           uid: user.uid,
-          name : name
+          name: name,
         });
         toast("Congratulation ! You are Registered", {
           type: "success",
@@ -62,10 +62,7 @@ const Signup = () => {
         //   })
         //   );
 
-        hitPostRequestToServer(user.uid , name);
-
-
-        
+        hitPostRequestToServer(user.uid, name);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -80,44 +77,39 @@ const Signup = () => {
       });
   };
 
-  const hitPostRequestToServer = async (id , name) => {
-      const params = {
-        user_id: id,
-        user_name: name,
-        mov1: "The Shawshank Redemption",
-        mov2: "The Godfather",
-        mov3: "The Dark Knight",
-        mov4: "Pulp Fiction",
-        mov5: "American History X",
-        weekT1: "d",
-        weekT2: "d",
-        weekT3: "d",
-        weekT4: "d",
-        dailyT1: "d",
-        dailyT2: "d",
-        dailyT3: "d",
-        dailyT4: "d",
-        totalWatchTime: 0.0,
-        weeklyWatchTime: 0.0,
-        rewardPoints: 0
-    }
-    const headers = {
-      'Content-Type': 'application/json', // Set the content type to JSON
-      'Cross-Origin-Opener-Policy' : "same-origin"
-      
+  const hitPostRequestToServer = async (id, name) => {
+    const params = {
+      user_id: id,
+      user_name: name,
+      mov1: "The Shawshank Redemption",
+      mov2: "The Godfather",
+      mov3: "The Dark Knight",
+      mov4: "Pulp Fiction",
+      mov5: "American History X",
+      weekT1: "d",
+      weekT2: "d",
+      weekT3: "d",
+      weekT4: "d",
+      dailyT1: "d",
+      dailyT2: "d",
+      dailyT3: "d",
+      dailyT4: "d",
+      totalWatchTime: 0.0,
+      weeklyWatchTime: 0.0,
+      rewardPoints: 0,
     };
-    try{
-      const response = await Axios.post("http://127.0.0.1:8000/user/api/data/" , params , {headers});
-    console.log(response);
-    navigate('/');
-    setLoading(false);
-    toast("Post req done on server " , {type : "success"});
-    }catch(error){
+
+    try {
+      const response = await axios.post("user/api/data/", params);
+      console.log(response);
+      navigate("/");
       setLoading(false);
-      
+      toast("Post req done on server ", { type: "success" });
+    } catch (error) {
+      toast("Oops ! There is some problem from our side" , {type : "warning"});
+      setLoading(false);
     }
-    
-  }
+  };
 
   return (
     <div className="main-container ">
