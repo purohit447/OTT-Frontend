@@ -56,6 +56,7 @@ function Nav() {
             type : "warning"
           })
           setLoading(false);
+          setUser(null);
       });
   }
 
