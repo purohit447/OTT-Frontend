@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./UserProfile.css";
-
+import UserContext from "../context/UserContext";
 const UserProfile = () => {
+
+  const [User , setUser] = useContext(UserContext)
+
   const user = {
     name: "John Doe",
     image: "https://cdn-icons-png.flaticon.com/512/64/64572.png",
@@ -22,7 +25,7 @@ const UserProfile = () => {
   return (
     <div className="user-profile">
       <img src={user.image} alt={user.name} className="user-profile-image" />
-      <h2 className="user__name">{user.name}</h2>
+      <h2 className="user__name">{User.email}</h2>
       <p>Points: {user.points}</p>
       {user.badges.length > 0 && (
         <div className="badges">

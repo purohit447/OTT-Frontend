@@ -57,3 +57,10 @@
 .nav__avatar:hover {
   transform: scale(120%);
 }
+
+.list-item{
+  font-size: 20px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
